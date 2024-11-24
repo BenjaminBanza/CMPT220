@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class filepractice {
+public class Main {
     public static void main(String[] args) throws IOException {
         Map<String, Double> students = new HashMap<>();
         File inputFile = new File("gpa");
@@ -40,7 +40,7 @@ public class filepractice {
         } catch (IOException e) {
             throw new RuntimeException("Error reading from file", e);
         }
-        /*/Map.Entry<String, Double> topStudent = students.entrySet().stream()
+        Map.Entry<String, Double> topStudent = students.entrySet().stream()
                 .max((entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()))
                 .orElse(null);
 
@@ -48,6 +48,6 @@ public class filepractice {
             System.out.println("Student with the highest GPA: " + topStudent.getKey() + " with GPA: " + topStudent.getValue());
         } else {
             System.out.println("No students found.");
-        }/* */
+        }
     }
 }
